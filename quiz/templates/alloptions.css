@@ -1,0 +1,58 @@
+
+body{
+margin: 10px;
+    padding: 10px;
+  
+    height: 100vh;
+    background-image: url(login.jpg);
+ background-size: cover ;
+    background-repeat:no-repeat;
+background-position: 69%;
+height: 100vh;
+/*background-color: rgba(42,46,55,255) ;*/
+}
+h1{
+color: rgba(252,197,140,255) ;
+background-color: transparent ;
+border: ridge transparent  2px;
+text-align: center;
+padding: 10px;
+font-family: "Tiny5", sans-serif;
+  font-weight: 350;
+  font-style: normal;
+text-shadow: 0 0 20px rgba(252,197,140,255);
+
+}
+h2{
+color: white;
+background-color: transparent ;
+backdrop-filter: blur(10px);
+padding: 5px;
+box-shadow: 0 0 10px black;
+margin-top: 30px;
+}
+label{
+background-color: transparent ;
+backdrop-filter: blur(10px);
+color: white;
+border-radius: 50px;
+box-shadow: 0 0 10px black;
+padding: 3px;
+
+}
+a{
+border: solid transparent ;
+background-color: rgba(252,197,140,255) ;
+border-radius: 50px;
+padding: 5px;
+text-decoration: none;
+color: black;
+float: right;
+margin: 10px;
+
+}
+a:hover{
+background-color: rgba(135,72,67,255);
+cursor: pointer;
+color: white ;
+}

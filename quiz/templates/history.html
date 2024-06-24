@@ -1,0 +1,104 @@
+{% extends 'subjects.html' %}
+{%block ques%}
+        const questions = [
+            {
+                "question": "Who was the first President of the United States?",
+                "options": ["George Washington", "Thomas Jefferson", "John Adams", "James Madison"],
+                "correct_answer": "George Washington"
+            },
+            {
+                "question": "Which war is known as the 'Great War'?",
+                "options": ["World War I", "World War II", "Vietnam War", "Korean War"],
+                "correct_answer": "World War I"
+            },
+            {
+                "question": "Who was the first female Prime Minister of the United Kingdom?",
+                "options": ["Margaret Thatcher", "Theresa May", "Indira Gandhi", "Angela Merkel"],
+                "correct_answer": "Margaret Thatcher"
+            },
+            {
+                "question": "Which ancient civilization built the Great Wall of China?",
+                "options": ["The Qin Dynasty", "The Han Dynasty", "The Ming Dynasty", "The Tang Dynasty"],
+                "correct_answer": "The Qin Dynasty"
+            },
+            {
+                "question": "Who wrote the 'Declaration of Independence' of the United States?",
+                "options": ["Thomas Jefferson", "George Washington", "Benjamin Franklin", "John Adams"],
+                "correct_answer": "Thomas Jefferson"
+            },
+            {
+                "question": "Which Russian leader is associated with the term 'Perestroika'?",
+                "options": ["Mikhail Gorbachev", "Joseph Stalin", "Vladimir Lenin", "Nikita Khrushchev"],
+                "correct_answer": "Mikhail Gorbachev"
+            },
+            {
+                "question": "Who was the longest-serving British monarch?",
+                "options": ["Queen Victoria", "Queen Elizabeth II", "King George III", "King Henry VIII"],
+                "correct_answer": "Queen Elizabeth II"
+            },
+            {
+                "question": "Which war began with the assassination of Archduke Franz Ferdinand?",
+                "options": ["World War I", "World War II", "The Cold War", "The Vietnam War"],
+                "correct_answer": "World War I"
+            },
+            {
+                "question": "Who was the first Emperor of Rome?",
+                "options": ["Augustus", "Julius Caesar", "Nero", "Caligula"],
+                "correct_answer": "Augustus"
+            },
+            {
+                "question": "Which civilization built the pyramids at Giza?",
+                "options": ["Ancient Egyptians", "Ancient Greeks", "Ancient Romans", "Mayans"],
+                "correct_answer": "Ancient Egyptians"
+            },
+            {
+                "question": "Who was the first person to step on the moon?",
+                "options": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Michael Collins"],
+                "correct_answer": "Neil Armstrong"
+            },
+            {
+                "question": "Who was the first female ruler of India?",
+                "options": ["Indira Gandhi", "Queen Victoria", "Sonia Gandhi", "Rani Lakshmi Bai"],
+                "correct_answer": "Indira Gandhi"
+            },
+            {
+                "question": "Which treaty ended World War I?",
+                "options": ["Treaty of Versailles", "Treaty of Paris", "Treaty of Trianon", "Treaty of Brest-Litovsk"],
+                "correct_answer": "Treaty of Versailles"
+            },
+            {
+                "question": "Who was the founder of the Mongol Empire?",
+                "options": ["Genghis Khan", "Kublai Khan", "Attila the Hun", "Tamerlane"],
+                "correct_answer": "Genghis Khan"
+            },
+            {
+                "question": "Which European explorer first reached India by sea?",
+                "options": ["Vasco da Gama", "Christopher Columbus", "Ferdinand Magellan", "James Cook"],
+                "correct_answer": "Vasco da Gama"
+            },
+            {
+                "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
+                "options": ["Nikita Khrushchev", "Joseph Stalin", "Vladimir Lenin", "Mikhail Gorbachev"],
+                "correct_answer": "Nikita Khrushchev"
+            },
+            {
+                "question": "Who discovered the New World?",
+                "options": ["Christopher Columbus", "Amerigo Vespucci", "Ferdinand Magellan", "Marco Polo"],
+                "correct_answer": "Christopher Columbus"
+            }
+        ];
+        {%endblock ques%}
+    
+        {%block bot%}
+        
+    <div class="quiz-container">
+        <header>
+            <h1>HISTORY</h1><br><br><br><br>
+        </header>
+        <section class="questions">
+            <form id="quiz-form"></form>
+            <br>
+            <a href="javascript:void(0);" onclick="submitForm()">Submit</a>
+        </section>
+    </div>
+    {%endblock bot%}

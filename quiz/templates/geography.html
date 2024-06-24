@@ -1,0 +1,128 @@
+{% extends 'subjects.html' %}
+{%block ques%}
+        const questions = [
+            {
+                "question": "What is the capital of France?",
+                "options": ["Paris", "London", "Rome", "Berlin"],
+                "correct_answer": "Paris"
+            },
+            {
+                "question": "Which continent is the largest by land area?",
+                "options": ["Asia", "Africa", "North America", "South America"],
+                "correct_answer": "Asia"
+            },
+            {
+                "question": "Which ocean is the largest?",
+                "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+                "correct_answer": "Pacific Ocean"
+            },
+            {
+                "question": "What is the longest river in the world?",
+                "options": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+                "correct_answer": "Nile"
+            },
+            {
+                "question": "Which country is known as the 'Land of the Rising Sun'?",
+                "options": ["Japan", "China", "India", "Thailand"],
+                "correct_answer": "Japan"
+            },
+            {
+                "question": "Which is the largest desert in the world?",
+                "options": ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Antarctic Desert"],
+                "correct_answer": "Sahara Desert"
+            },
+            {
+                "question": "What is the highest mountain peak in the world?",
+                "options": ["Mount Everest", "K2", "Kangchenjunga", "Lhotse"],
+                "correct_answer": "Mount Everest"
+            },
+            {
+                "question": "Which city is located at the confluence of the Danube and Sava rivers?",
+                "options": ["Belgrade", "Budapest", "Vienna", "Prague"],
+                "correct_answer": "Belgrade"
+            },
+            {
+                "question": "Which is the largest country by land area?",
+                "options": ["Russia", "Canada", "China", "United States"],
+                "correct_answer": "Russia"
+            },
+            {
+                "question": "Which continent has the most countries?",
+                "options": ["Africa", "Asia", "Europe", "North America"],
+                "correct_answer": "Africa"
+            },
+            {
+                "question": "Which river is known as the 'River of Life'?",
+                "options": ["Nile", "Amazon", "Ganges", "Yangtze"],
+                "correct_answer": "Nile"
+            },
+            {
+                "question": "What is the capital of Australia?",
+                "options": ["Canberra", "Sydney", "Melbourne", "Perth"],
+                "correct_answer": "Canberra"
+            },
+            {
+                "question": "Which country is known as the 'Land of Thousand Lakes'?",
+                "options": ["Finland", "Norway", "Sweden", "Denmark"],
+                "correct_answer": "Finland"
+            },
+            {
+                "question": "Where is the Grand Canyon located?",
+                "options": ["Arizona", "Nevada", "Utah", "California"],
+                "correct_answer": "Arizona"
+            },
+            {
+                "question": "What is the largest island in the world?",
+                "options": ["Greenland", "New Guinea", "Borneo", "Madagascar"],
+                "correct_answer": "Greenland"
+            },
+            {
+                "question": "Which country is known as the 'Land of the Midnight Sun'?",
+                "options": ["Norway", "Sweden", "Finland", "Iceland"],
+                "correct_answer": "Norway"
+            },
+            {
+                "question": "Where is the Great Barrier Reef located?",
+                "options": ["Australia", "Philippines", "Brazil", "Indonesia"],
+                "correct_answer": "Australia"
+            },
+            {
+                "question": "Which is the largest bay in the world?",
+                "options": ["Hudson Bay", "Bay of Bengal", "Bay of Biscay", "Chesapeake Bay"],
+                "correct_answer": "Hudson Bay"
+            },
+            {
+                "question": "What is the highest waterfall in the world?",
+                "options": ["Angel Falls", "Niagara Falls", "Victoria Falls", "Iguazu Falls"],
+                "correct_answer": "Angel Falls"
+            },
+            {
+                "question": "Which city is known as the 'City of Love'?",
+                "options": ["Paris", "Venice", "Rome", "Florence"],
+                "correct_answer": "Paris"
+            },
+            {
+                "question": "What is the largest lake in Africa?",
+                "options": ["Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Chad"],
+                "correct_answer": "Lake Victoria"
+            },
+            {
+                "question": "Which is the longest mountain range in the world?",
+                "options": ["Andes", "Himalayas", "Rocky Mountains", "Alps"],
+                "correct_answer": "Andes"
+            }
+        ];
+        {%endblock ques%}
+    
+        {%block bot%}
+        
+    <div class="quiz-container">
+        <header>
+            <h1>GEOGRAPHY</h1>
+        </header>
+        <section class="questions">
+            <form id="quiz-form"></form>
+            <a href="javascript:void(0);" onclick="submitForm()">Submit</a>
+        </section>
+    </div>
+    {%endblock bot%}

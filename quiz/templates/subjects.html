@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Random Questions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+<style>
+body{
+    margin: 10px;
+        padding: 10px;
+      display: flex;
+        height: 100vh;
+        background-image: url(/static/login.jpg);
+     background-size: cover ;
+        background-repeat:no-repeat;
+    background-position: 69%;
+    background-attachment: fixed;
+    height: 100vh;
+    /*background-color: rgba(42,46,55,255) ;*/
+    }
+    h1{
+    color: rgba(252,197,140,255) ;
+    background-color: transparent ;
+    border: ridge transparent  2px;
+    text-align: center;
+    padding: 10px;
+    font-family: "Tiny5", sans-serif;
+      font-weight: 350;
+      font-style: normal;
+    text-shadow: 0 0 20px black;
+    position: absolute;
+           
+            left: 50%;
+            transform: translate(-50%, -50%);
+    
+    }
+    .mess h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 5px;
+            color: aliceblue;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 10px black;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 1000px;
+            width: 100%;
+            background-color: transparent;
+            text-align: center;
+    }
+    .hhh{
+    
+    color: white;
+    background-color: transparent ;
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    box-shadow: 0 0 10px black;
+    margin-top: 40px;
+    
+    }
+   /* label{
+    
+    
+    color: white;
+   
+    text-shadow: 0 0 20px black;
+    padding: 3px;
+    
+    }*/
+    a{
+    border: solid transparent ;
+    background-color: rgba(252,197,140,255) ;
+    border-radius: 50px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+ 
+    margin: 10px;
+    position: absolute;
+            left: 95%;
+            transform: translate(-50%, -50%);
+    }
+    a:hover{
+    background-color: rgba(135,72,67,255);
+    cursor: pointer;
+    color: white ;
+    }</style>
+    <script>
+        
+ {%block ques%} {%endblock ques%}
+
+    const randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0, 10);
+    let startTime;
+
+    window.onload = function () {
+        startTime = new Date();
+        const quizForm = document.getElementById('quiz-form');
+        randomQuestions.forEach((question, index) => {
+            const questionElement = document.createElement('div');
+            questionElement.innerHTML = `
+               <div class = 'hhh'> <h2>${question.question}</h2>
+                ${question.options.map(option => `
+                    <input type="radio" id="${index}_${option}" name="answer[${index}]" value="${option}">
+                    <label for="${index}_${option}">${option}</label><br>
+                `).join('')}
+                <input type="hidden" name="correct_answer[${index}]" value="${question.correct_answer}">
+            `;
+            quizForm.appendChild(questionElement);
+        });
+        
+    }
+
+    function submitForm() {
+        const endTime = new Date();
+        const timeTaken = (endTime - startTime) / 1000;
+        const form = document.getElementById('quiz-form');
+        const formData = new FormData(form);
+        formData.append('time_taken', timeTaken);
+
+        const answers = {};
+        const correctAnswers = {};
+        formData.forEach((value, key) => {
+            if (key.startsWith('answer')) {
+                answers[key] = value;
+            } else if (key.startsWith('correct_answer')) {
+                correctAnswers[key] = value;
+            }
+        });
+
+        let score = 0;
+        for (const [key, value] of Object.entries(answers)) {
+            const correctKey = key.replace('answer', 'correct_answer');
+            if (value === correctAnswers[correctKey]) {
+                score++;
+            }
+        }
+
+        let message = '';
+        if (score === 10) {
+            message = "Well done! Perfect score! 👍";
+        } else if (score > 6) {
+            message = "Good job!";
+        } else if (score > 3) {
+            message = "Not bad!";
+        } else {
+            message = "Practice a bit more!";
+        }
+
+        document.body.innerHTML = `
+          <div class='mess'><h1>${message}<br>
+            You scored ${score} out of 10.<br>
+            Time taken: ${timeTaken} seconds</h1></div>
+        `;
+    }
+</script>
+</head>
+<body>
+    {%block bot%} {%endblock bot%}
+</body>
+</html>
